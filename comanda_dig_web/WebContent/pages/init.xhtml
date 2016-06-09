@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+<f:view contentType="text/html">
+	<h:head>
+		<ui:include src="../css/all_css.css" />
+	</h:head>
+	
+</f:view>
+
+
+
+
+
+
+
+<h:form id="form">
+
+	<p:growl id="messages" showDetail="true" life="3000"/>
+
+	<p:layout resizerTip="Resize Me" togglerTipClosed="Open Me"
+		togglerTipOpen="Close Me">
+		
+		<ui:include src="../pages/topPage.xhtml" />
+		<p:layoutUnit  position="center">
+			
+		</p:layoutUnit>
+		
+		<ui:include src="../pages/leftPage.xhtml" />
+		
+
+	</p:layout>
+
+	
+
+
+	
+
+</h:form>
+
+
+
+
+
+
+
+<h:outputStylesheet library="css" name="global.css" />
+
+<h:outputStylesheet id="layoutCSS">  
+    body {  
+        margin: 4px !important;  
+    }  
+</h:outputStylesheet>
+
+
+<script type="text/javascript">
+
+function centro(p,n,l,a,v1,v2,v3,v4,v5,v6,v7,v8,v9){
+var l = l;
+var a = a;
+var t = (screen.height/2)-(a/2);
+var d = (screen.width/2)-(l/2);
+window.open(p,n,'width='+l+',height='+a+',top='+t+',left='+d+',scrollbars='+v1+',menubar='+v2+',directories='+v3+',location='+v4+',copyhistory='+v5+',status='+v6+',toolbar='+v7+',maximized='+v8+',resizable='+v9+'');
+}
+
+</script>
+
+
+<script type="text/javascript">
+    PrimeFaces.locales['pt'] = {
+    		closeText: 'Fechar',    
+            prevText: 'Anterior',    
+            nextText: 'Próximo',    
+            currentText: 'Começo',    
+            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],    
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul','Ago','Set','Out','Nov','Dez'],    
+            dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],    
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],    
+            dayNamesMin: ['D','S','T','Q','Q','S','S'],    
+            weekHeader: 'Semana',    
+            firstDay: 1,    
+            isRTL: false,    
+            showMonthAfterYear: false,    
+            yearSuffix: '',    
+            timeOnlyTitle: 'Só Horas',    
+            timeText: 'Tempo',    
+            hourText: 'Hora',    
+            minuteText: 'Minuto',    
+            secondText: 'Segundo',    
+            currentText: 'Data Atual',    
+            ampm: false,    
+            month: 'Mês',    
+            week: 'Semana',    
+            day: 'Dia',    
+            allDayText : 'Todo Dia'  
+    };
+</script>
+<style type="text/css">
+.value {
+	width: 1000px;
+}
+</style>
+
+
+</html>
