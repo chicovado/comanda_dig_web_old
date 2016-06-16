@@ -37,7 +37,7 @@ public class User implements Serializable {
 	private String celular;
 
 	private String cpf;
-
+	
 	private String email;
 
 	@Lob
