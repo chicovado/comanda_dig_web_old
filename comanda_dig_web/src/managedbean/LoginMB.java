@@ -1,8 +1,6 @@
 package managedbean;
 
 import java.io.Serializable;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,14 +10,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
 
-import model.CategoriaMenu;
-import model.ItemMenu;
 import model.User;
-import service.MenuWS;
-import service.UserWS;
 import ejb.UserFacade;
 
 
@@ -51,58 +43,11 @@ public class LoginMB  implements Serializable {
 		this.usuario =  new  User();
 		login = new String();
 		senha = new String();
-		try {
-			this.testeWS();
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	
 	
-	private void testeWS() throws MalformedURLException{
-		
-		Service userService = Service.create(
-                new URL("http://localhost:8080/comanda_dig_ejb/UserService/UserWSImp?wsdl"),
-                new QName("http://comandaDig/wsdl", "UserService"));
-		
-		Service menuService = Service.create(
-                new URL("http://localhost:8080/comanda_dig_ejb/MenuService/MenuWSImp?wsdl"),
-                new QName("http://comandaDig/wsdl", "MenuService"));
-
-        
-
-        UserWS userWs = (UserWS) userService.getPort(UserWS.class);
-		 	
-	     User u = new User();
-	     u.setNome("testeWS");
-	     u.setCpf("8888888888");
-	     
-	     List<User> list = userWs.findAll();
-	     for (User user : list) {
-			//System.out.println(user.getNome());
-		}
-	     
-	     //--------------------------
-	     
-	     
-	     MenuWS menuWS = (MenuWS) menuService.getPort(MenuWS.class);
-	     
-	     List<CategoriaMenu> categoriaMenus = menuWS.findAllCategoria();
-	     
-	     for (CategoriaMenu categoriaMenu : categoriaMenus) {
-			System.out.println(categoriaMenu.getNome());
-			if (categoriaMenu.getItemMenuList() != null && !categoriaMenu.getItemMenuList().isEmpty()){
-				for (ItemMenu itemMenu : categoriaMenu.getItemMenuList()) {
-					//System.out.println(itemMenu.getNome());
-				}
-			}
-			
-		}
-	     
-	     
-	}
+	
 	
 	
 	
