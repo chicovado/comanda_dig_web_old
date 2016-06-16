@@ -23,7 +23,6 @@ public class UserWSImp implements UserWS {
 	@Override
 	public void save(User user) {
 		this.usuarioFacade.save(user);
-		
 	}
 
 	@Override
