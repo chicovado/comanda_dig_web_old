@@ -13,6 +13,7 @@
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
+  <from-view-id></from-view-id>
   <navigation-case>
    <from-outcome>go_userInit</from-outcome>
    <to-view-id>/pages/userInit.xhtml</to-view-id>
