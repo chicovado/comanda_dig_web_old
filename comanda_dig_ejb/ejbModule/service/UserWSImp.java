@@ -46,6 +46,12 @@ public class UserWSImp implements UserWS {
 	public List<User> findAll() {
 		return this.usuarioFacade.findAll();
 	}
+
+	@Override
+	public Boolean autenticarUser(String email, String senha) {
+		// TODO Auto-generated method stub
+		return this.autenticarUser(email, senha);
+	}
 	
 	
 

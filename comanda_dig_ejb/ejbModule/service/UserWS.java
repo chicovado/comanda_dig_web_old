@@ -26,6 +26,9 @@ public interface UserWS {
 	@WebMethod
 	public abstract List<User> findAll();
 	
+	@WebMethod
+	public abstract Boolean autenticarUser(String email, String senha);
+	
 	
 	
 }

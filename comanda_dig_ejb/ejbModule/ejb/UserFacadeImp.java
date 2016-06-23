@@ -145,6 +145,22 @@ public class UserFacadeImp implements UserFacade {
 		return this.salarioUserDAO.findEnderecoByUser(idUser);
 	}
 
+	@Override
+	public Boolean autenticarUser(String email, String senha) {
+		
+		
+		List<User> users = this.dao.listarPoreEmail(email);
+		if(users !=null && !users.isEmpty()){
+			User user = users.get(0);
+			if(user.getSenha().equals(senha)){
+				return true;
+				
+			}
+			
+		}
+		return false;
+	}
+
 	
 
 	
